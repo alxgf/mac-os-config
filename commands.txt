@@ -1,0 +1,19 @@
+# dockbar tweaks
+
+defaults write com.apple.dock autohide-time-modifier -float 0.15;killall Dock
+defaults write com.apple.Dock autohide-delay -float 0; killall Dock
+
+# activate 3-finger swipe
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -int 1
+
+# remove large files
+rm -rf /System/Library/Speech/*
+
+# disable the dashboard
+defaults write com.apple.dashboard mcx-disabled -boolean TRUE
+
+# enable single app mode
+defaults write com.apple.dock single-app -bool true; killall Dock
+
+# install homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
